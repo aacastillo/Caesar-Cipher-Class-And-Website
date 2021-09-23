@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Encoder/Decoder</title>
+    <script SRC="decoderClass.js"></script>
+    <script>
+        function doIt() {
+            let cipherKey = document.getElementById("key").value;
+            let cipherObj = new decoder(cipherKey);
+            if (document.getElementById("encode") != null){
+                let textToEncode = document.getElementById("encode").value;
+                let encodedText = cipherObj.encode(textToEncode);
+                document.getElementById("encoded").value = encodedText;
+            } 
+            if (document.getElementById("decode") != null){
+                let textToDecode = document.getElementById("decode").value;
+                let decodedText = cipherObj.decode(textToDecode);
+                document.getElementById("decoded").value = decodedText;
+            }
+        }
+    </script>
+  </head>
+  <body>
+    <center>
+        <h1>Encoder/Decoder</h1>
+        <img src="https://github.com/emeryberger/web-programming/raw/master/decoder-ring.jpg" alt="Caesar Cipher"><br>
+        <label for="key">Key:</label>
+        <input type="text" id="key">
+        <p>
+        
+        <label for="encode">Text to encode:</label>
+        <input type="text" id="encode">
+        <label for="encoded">Encoded = </label>
+        <input type="text" id="encoded">
+        </p><p>
+        
+        <label for="decode">Text to decode: </label>
+        <input type="text" id="decode">
+        <label for="decoded">Decoded = </label>
+        <input type="text" id="decoded">
+        </p><p>
+        
+        <input type="button" onclick="doIt()" value="Go">
+    </p></center>
+</body>
+</html>
